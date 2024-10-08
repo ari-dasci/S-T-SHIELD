@@ -1,18 +1,20 @@
 Functionality for reproducibility
 =================================
 
-The following page describe the modules available on the SHIELD platform.
+The following page describe the modules available on the T-SHIELD platform.
 
 .. autosummary::
-    SHIELD.SHIELD.shield
-    SHIELD.procedures.procedures.classifier
-    SHIELD.procedures.procedures.train_step
-    SHIELD.procedures.procedures.validation_step
+    TSHIELD.TSHIELD.tshield
+    TSHIELD.procedures.procedures.classifier
+    TSHIELD.procedures.procedures.train_step
+    TSHIELD.procedures.procedures.validation_step
 
-.. autofunction:: SHIELD.SHIELD.shield
+.. autofunction:: TSHIELD.TSHIELD.rshield
 
-.. autofunction:: SHIELD.procedures.procedures.classifier
+.. autofunction:: TSHIELD.TSHIELD.xshield
 
-.. autofunction:: SHIELD.procedures.procedures.train_step
+.. autofunction:: TSHIELD.procedures.procedures.classifier
 
-.. autofunction:: SHIELD.procedures.procedures.validation_step
+.. autofunction:: TSHIELD.procedures.procedures.train_step
+
+.. autofunction:: TSHIELD.procedures.procedures.validation_step

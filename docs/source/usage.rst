@@ -2,7 +2,7 @@ Usage
 ======
 
 We give an example of usage where we replicate the experimentation of
-the paper "SHIELD: ":
+the paper "T-SHIELD: ":
 
 .. toctree::
     :maxdepth: 2

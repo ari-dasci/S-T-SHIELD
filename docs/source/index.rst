@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to SHIELD's documentation!
+Welcome to T-SHIELD's documentation!
 ==================================
 
 .. toctree::

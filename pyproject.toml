@@ -3,7 +3,7 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "TSHIELD_isega24"
+name = "tshield-xai"
 version = "0.0.1"
 authors = [
   { name="Ivan Sevillano-Garcia", email="isevillano@ugr.es" },
@@ -38,9 +38,10 @@ dependencies = [
         "nbsphinx",
         "wget",
         "pandoc",
-        "ReVel",
+        "revel-xai",
         "torchsummary",
         "tensorboard",
+        "twine",
     ]
 
 [project.urls]

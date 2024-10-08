@@ -14,3 +14,8 @@ Then, you can install SHIELD by running:
 
     git clone https://github.com/isega24/SHIELD.git
     pip install ./SHIELD
+
+Or you can install it by simply using pip:
+
+.. code-block:: bash
+    pip install tshield-xai

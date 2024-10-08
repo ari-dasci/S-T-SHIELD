@@ -4,14 +4,14 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="TSHIELD_isega24",
+    name="tshield-xai",
     version="0.0.1",
     author="Iván Sevillano Garcia",
     author_email="isevillano@ugr.es",
     description="Transformation-Selective Hidden Input Evaluation for Learning Dynamics",
     long_description=long_description,
     classifiers=["Programming Language :: Python :: 3"],
-    packages=["TSHIELD", "TSHIELD.TSHIELD", "TSHIELD.procedures"],
+    packages=setuptools.find_packages(),
     install_requires=[
         "torch",
         "scikit-learn",

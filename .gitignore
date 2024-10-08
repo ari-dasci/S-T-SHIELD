@@ -1,3 +1,4 @@
 data/*
-TSHIELD_isega24.egg-info/*
+*.egg-info/*
 __pycache__/
+dist/

@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'SHIELD'
+project = 'T-SHIELD'
 copyright = '2024, Iván Sevillano García'
 author = 'Iván Sevillano García'
 
@@ -32,7 +32,8 @@ extensions = [
     "sphinx.ext.autosummary",
     "sphinxcontrib.bibtex",
     "sphinx.ext.napoleon",
-    "nbsphinx"
+    "sphinx_inlinecode",
+    "nbsphinx",
 ]
 bibtex_bibfiles = ["refs.bib"]
 
@@ -58,4 +59,4 @@ html_theme = "sphinx_rtd_theme"
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+#html_static_path = ['_static']
