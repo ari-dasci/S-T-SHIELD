@@ -18,4 +18,5 @@ Then, you can install SHIELD by running:
 Or you can install it by simply using pip:
 
 .. code-block:: bash
+    
     pip install tshield-xai

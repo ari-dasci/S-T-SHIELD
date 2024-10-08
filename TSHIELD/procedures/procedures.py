@@ -5,16 +5,17 @@ from torch.utils.checkpoint import checkpoint
 
 
 def classifier(pretrained_model, num_classes):
-    '''
-    Model used for classification on SHIELD paper.
-    
+
+    # cite sevillano2024shield:
+    """
+    Model used for classification on the T-SHIELD work :cite:`sevillano2024shield` .
     This function returns a model with the specified number of classes and the specified pretrained model of
     the torchvision library.
-    
-    This method was used as a wrapper to load just the classifier of the SHIELD paper but
+
+    This method was used as a wrapper to load the classifier but
     you can use your own model if it accepts the same input format as the torchvision
     models and returns a tensor with the same shape as the number of classes in the logits space.
-    
+
     :param pretrained_model: The name of the pretrained model to be used. It can be one of the following:
         - efficientnet-b2
         - efficientnet_v2_s
@@ -23,14 +24,14 @@ def classifier(pretrained_model, num_classes):
     :param num_classes: The number of classes of the dataset.
     :return: The model with the specified number of classes and the specified pretrained model. We
         delete the last layer of the model and add a new layer with the specified number of classes.
-        
+
     To load a specific model, use the following code:
 
     .. code-block:: python
-    
+
         model = classifier("efficientnet-b2", 10)
-    '''
-    
+    """
+
     if "efficientnet-b2" == pretrained_model:
         model_pretrained = torchvision.models.efficientnet_b2(weights="IMAGENET1K_V1")
         pretrained_state_dict = model_pretrained.state_dict()
