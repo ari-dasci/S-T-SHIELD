@@ -94,12 +94,12 @@ def rshield(
     percentage=None,
 ):
     """
-    Selective Hidden Input Evaluation for Learning Dynamics (SHIELD).
+    Random-Selective Hidden Input Evaluation for Learning Dynamics (R-SHIELD).
     
-    This function calculates the SHIELD score for a given model and input tensor.
-    SHIELD is a method for evaluating the importance of different regions in an input tensor
+    This function calculates the R-SHIELD score for a given model and input tensor.
+    R-SHIELD is a method for evaluating the importance of different regions in an input tensor
     for the predictions made by a model. It measures the sensitivity of the model's output to changes
-    in specific regions of the input.
+    in specific regions of the input. Those regions are randomized so the method is stochastic.
 
     :param model: The model to be evaluated.
     :param input: The input tensor for which the SHIELD score is calculated.
@@ -107,17 +107,18 @@ def rshield(
     :param segmentation: The segmentation method to be used.
     :param device: The device to be used for computation.
     :param percentage: The percentage of the input to be evaluated.
-    :return: The `shield_score`. It is a scalar tensor representing the SHIELD score for the given input tensor and can
+    :return: The `r-shield_score`. It is a scalar tensor representing the R-SHIELD score for the given input tensor and can
     be used as a regularization term in the training of the model given as parameter.
 
     Example usage:
 
     .. code-block:: python
 
+        from TSHIELD.TSHIELD import rshield
         model = MyModel() \\ Your classification model
         input = torch.rand((1, 3, 224, 224))
-        shield_score = shield(model, input, input_0=None, segmentation=1, device='cuda', percentage=2)
-        print(shield_score)
+        rshield_score = rshield(model, input, input_0=None, segmentation=1, device='cuda', percentage=2)
+        
     """
 
     if input_0 == None:
@@ -204,34 +205,33 @@ def xshield(
     percentage=None,
 ):
     """
-    xAI - Selective Hidden Input Evaluation for Learning Dynamics (SHIELD).
+    xAI - Selective Hidden Input Evaluation for Learning Dynamics (X-SHIELD).
 
     This function calculates the X-SHIELD score for a given model and input tensor.
     X-SHIELD is a method based on previous SHIELD method for evaluating the importance of different 
     regions in an input tensor for the predictions made by a model. It measures the sensitivity of 
     the model's output to changes in specific regions of the input.
     
-    The main difference between SHIELD and X-SHIELD is that X-SHIELD uses an explanation defined by the model
-    itself to evaluate the importance of different regions in the input tensor and ocludes the regions with low
-    importance.
+    X-SHIELD uses an explanation defined by the model itself to evaluate the importance of different regions in the input tensor and ocludes the regions with less importance.
 
     :param model: The model to be evaluated.
-    :param input: The input tensor for which the SHIELD score is calculated.
+    :param input: The input tensor for which the X-SHIELD score is calculated.
     :param input_0: The input tensor to be considered as the `null` input with the same shape as input.
     :param segmentation: The segmentation method to be used.
     :param device: The device to be used for computation.
     :param percentage: The percentage of the input to be evaluated.
-    :return: The `shield_score`. It is a scalar tensor representing the SHIELD score for the given input tensor and can
+    :return: The `xshield_score`. It is a scalar tensor representing the X-SHIELD score for the given input tensor and can
     be used as a regularization term in the training of the model given as parameter.
 
     Example usage:
 
     .. code-block:: python
 
+        from TSHIELD.TSHIELD import xshield
         model = MyModel() \\ Your classification model
         input = torch.rand((1, 3, 224, 224))
-        shield_score = xshield(model, input, input_0=None, segmentation=1, device='cuda', percentage=2)
-        print(shield_score)
+        xshield_score = xshield(model, input, input_0=None, segmentation=1, device='cuda', percentage=2)
+
     """
 
     if input_0 == None:
