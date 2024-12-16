@@ -4,7 +4,8 @@ T-SHIELD (Transformation-Selective Hidden Input Evaluation for Learning Dynamics
 technique that aims to enhance model interpretability while improves model performance. Specifically, T-SHIELD adds a regularization term to the objective function that penalizes if it relies too heavily on
 a small subset of input features.
 
-You can find the documentation of the package [here](https://tshield-xai.readthedocs.io/en/latest/).
+
+You can find the documentation of the package [here](https://s-t-shield.readthedocs.io/en/latest/).
 
 If you use this code or find it useful, please cite our paper:
 
