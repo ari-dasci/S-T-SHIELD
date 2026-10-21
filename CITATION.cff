@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the article below."
+title: "T-SHIELD"
+abstract: "Regularization family that hides part of the input during training so the model cannot rely on a small subset of features, improving both performance and explainability."
+type: software
+license: GPL-3.0
+repository-code: "https://github.com/ari-dasci/S-T-SHIELD"
+keywords:
+  - explainable artificial intelligence
+  - regularization
+  - interpretability
+  - deep learning
+authors:
+  - family-names: Sevillano-García
+    given-names: Iván
+    orcid: "https://orcid.org/0000-0002-5029-9106"
+    affiliation: "Andalusian Research Institute in Data Science and Computational Intelligence (DaSCI), University of Granada, Spain"
+  - family-names: Luengo
+    given-names: Julián
+    affiliation: "Andalusian Research Institute in Data Science and Computational Intelligence (DaSCI), University of Granada, Spain"
+  - family-names: Herrera
+    given-names: Francisco
+    affiliation: "Andalusian Research Institute in Data Science and Computational Intelligence (DaSCI), University of Granada, Spain"
+preferred-citation:
+  type: article
+  title: "X-SHIELD: Regularization for explainable Artificial Intelligence"
+  authors:
+    - family-names: Sevillano-García
+      given-names: Iván
+      orcid: "https://orcid.org/0000-0002-5029-9106"
+    - family-names: Luengo
+      given-names: Julián
+    - family-names: Herrera
+      given-names: Francisco
+  journal: "Machine Intelligence Research"
+  volume: 23
+  year: 2026
+  doi: "10.1007/s11633-025-1576-y"
