@@ -57,7 +57,7 @@ from TSHIELD.TSHIELD import xshield
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 loss_f = torch.nn.CrossEntropyLoss()
-reg_f = lambda x, y: xshield(model=x, input=y, percentage=0.3, device=device)
+reg_f = lambda x, y: xshield(model=x, input=y, percentage=30, device=device)
 
 # One full epoch: the returned `reg` is the regularization term for that epoch.
 loss, acc, reg = procedures.train_step(
@@ -70,8 +70,22 @@ Swap `xshield` for `rshield` to train with the random-region variant instead. A 
 training and validation script, including the argument parser and the metrics used in the
 paper, lives in [`TSHIELD/tests/train.py`](TSHIELD/tests/train.py).
 
-Set `percentage` to control how much of the input is hidden; leaving it `None` uses the
-function's own default.
+`percentage` is a **percentage from 0 to 100**: it sets how much of the input is hidden
+(`percentage=30` hides 30%). Leaving it `None` uses the function's own default.
+
+The batch must take part in the autograd graph, because both regularizers differentiate the
+model output with respect to the input. In a normal loop this means `images.requires_grad_(True)`
+before the forward pass, or loading the batch with gradients enabled.
+
+For a script you can run in one command, with no dataset and no download, see
+[`examples/quickstart.py`](examples/quickstart.py):
+
+```bash
+python examples/quickstart.py
+```
+
+It runs one optimiser step with no penalty, with R-SHIELD and with X-SHIELD on a small
+randomly-initialised CNN, so you can see exactly where the term enters the loop.
 
 ## Documentation
 
