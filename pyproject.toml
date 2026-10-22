@@ -1,48 +1,70 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools>=77.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "tshield-xai"
-version = "0.0.1"
+version = "0.1.0"
 authors = [
   { name="Ivan Sevillano-Garcia", email="isevillano@ugr.es" },
 ]
 description = "T-SHIELD Regularization for Artificial Intelligence"
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.10"
+# The LICENSE file is the GPL v3 text. numpy>=2.1.2 already requires Python >=3.10.
+license = "GPL-3.0-only"
+license-files = ["LICENSE"]
+keywords = ["explainable-ai", "xai", "regularization", "deep-learning", "pytorch"]
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
     "Operating System :: OS Independent",
 ]
+# Runtime dependencies only: the modules the package actually imports.
 dependencies = [
-        "torch>=2.4.1",
-        "scikit-learn>=1.5.2",
-        "scikit-image>=0.24.0",
-        "matplotlib>=3.9.2",
-        "numpy>=2.1.2",
-        "scipy>=1.14.1",
-        "pandas>=2.2.3",
-        "torchvision>=0.19.1",
-        "efficientnet_pytorch>=0.7.1",
-        "tqdm>=4.66.5",
-        "opencv-python>=4.10.0.84",
-        "IPython>=8.28.0",
-        "seaborn>=0.13.2",
-        "plotly>=5.24.1",
-        "ipywidgets>=8.1.5",
-        "sphinx>=8.0.2",
-        "sphinx_rtd_theme>=3.0.0",
-        "sphinxcontrib.bibtex>=2.6.3",
-        "nbsphinx>=0.9.5",
-        "wget>=3.2",
-        "pandoc>=2.4",
-        "revel-xai>=1.0.3",
-        "torchsummary>=1.5.1",
-        "tensorboard>=2.18.0",
-        "twine>=5.1.1",
-    ]
+    "torch>=2.4.1",
+    "torchvision>=0.19.1",
+    "numpy>=2.1.2",
+    "pandas>=2.2.3",
+    "matplotlib>=3.9.2",
+    "tqdm>=4.66.5",
+    "tensorboard>=2.18.0",
+    "revel-xai>=1.0.3",
+]
+
+[project.optional-dependencies]
+# Needed by the training scripts in TSHIELD/tests/, not by the library itself.
+training = [
+    "scikit-learn>=1.5.2",
+    "scikit-image>=0.24.0",
+    "scipy>=1.14.1",
+    "efficientnet_pytorch>=0.7.1",
+    "opencv-python>=4.10.0.84",
+    "torchsummary>=1.5.1",
+]
+# Needed to build the documentation.
+docs = [
+    "sphinx>=8.0.2",
+    "sphinx_rtd_theme>=3.0.0",
+    "sphinxcontrib.bibtex>=2.6.3",
+    "nbsphinx>=0.9.5",
+    "ipywidgets>=8.1.5",
+    "plotly>=5.24.1",
+    "seaborn>=0.13.2",
+    "IPython>=8.28.0",
+    "pandoc>=2.4",
+    "wget>=3.2",
+]
+dev = [
+    "twine>=5.1.1",
+]
 
 [project.urls]
-Homepage = "https://github.com/isega24/SHIELD"
+Homepage = "https://github.com/ari-dasci/S-T-SHIELD"
+Repository = "https://github.com/ari-dasci/S-T-SHIELD"
+Issues = "https://github.com/ari-dasci/S-T-SHIELD/issues"
+Paper = "https://doi.org/10.1007/s11633-025-1576-y"
+
+[tool.setuptools.packages.find]
+include = ["TSHIELD*"]
